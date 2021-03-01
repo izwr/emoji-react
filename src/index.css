@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
-.tippy-tooltip {
-  background-color: transparent !important;
+.button {
+  border: 1px solid lightgray;
+  padding: 2px;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
 }

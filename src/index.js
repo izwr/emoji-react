@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "react-tippy/dist/tippy.css";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "react-tippy/dist/tippy.css";
 
 ReactDOM.render(
   <React.StrictMode>
