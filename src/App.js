@@ -24,7 +24,10 @@ function App() {
         <p>
           Here is an input, and click on that 😀 button to add the emoji, if you
           see a black backgound below the emoji picker dont worry that can be
-          fixed by editing <span className="text-primary">tippy.css</span>
+          fixed by editing{" "}
+          <span className="text-primary">
+            <u>tippy.css</u>
+          </span>
         </p>
       </div>
       <hr />
