@@ -50,6 +50,35 @@ function App() {
           <button className="button">😀</button>
         </Tooltip>
       </div>
+      <hr />
+      <div>
+        <ul class="list-group w-50 m-auto">
+          <li class="list-group-item active">
+            Instructions to run this project:
+          </li>
+          <li class="list-group-item">
+            Clone this project from{" "}
+            <a
+              href="https://github.com/mechanical-coder/emoji-react"
+              target="_blank"
+            >
+              github
+            </a>
+          </li>
+          <li class="list-group-item">
+            Inside the project repository run &nbsp; <code>npm install</code>
+          </li>
+          <li class="list-group-item">
+            Then run &nbsp; <code>npm start</code>
+          </li>
+          <li class="list-group-item">
+            Click{" "}
+            <a href="http://localhost:3000" target="_blank">
+              here
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
