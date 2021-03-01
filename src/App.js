@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import EmojiPicker from "emoji-picker-react";
+import React, { useState } from "react";
+import { Tooltip } from "react-tippy";
+import "./App.css";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+
+  const [openState, setOpenState] = useState(false);
+
+  const convertFromUnified = (unified) => {
+    const arr = unified.split("-").map((sec) => "0x" + sec);
+    return arr;
+  };
+
+  const handleEmojiClick = (event, emoji) => {
+    setInputValue(inputValue + emoji.emoji);
+    console.log(String.fromCodePoint(...convertFromUnified(emoji.unified)));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tooltip
+        sticky={true}
+        trigger="click"
+        html={<EmojiPicker onEmojiClick={handleEmojiClick} />}
+        interactive
+        theme="transparent"
+      >
+        <button>Emoji</button>
+      </Tooltip>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(event) => {
+          setInputValue(event.target.value);
+        }}
+      />
     </div>
   );
 }
