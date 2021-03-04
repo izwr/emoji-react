@@ -8,6 +8,8 @@ function App() {
 
   const [openState, setOpenState] = useState(false);
 
+  const [messages, setMessages] = useState([]);
+
   const convertFromUnified = (unified) => {
     const arr = unified.split("-").map((sec) => "0x" + sec);
     return arr;
@@ -16,6 +18,11 @@ function App() {
   const handleEmojiClick = (event, emoji) => {
     setInputValue(inputValue + emoji.emoji);
     console.log(String.fromCodePoint(...convertFromUnified(emoji.unified)));
+  };
+
+  const handleSendMessage = () => {
+    setMessages([...messages, inputValue]);
+    setInputValue("");
   };
 
   return (
@@ -49,6 +56,18 @@ function App() {
         >
           <button className="button">😀</button>
         </Tooltip>
+        <button className="button py-1" onClick={handleSendMessage}>
+          Send
+        </button>
+      </div>
+      <hr />
+      <div className="container w-50">
+        <h2>Messages here</h2>
+        {messages.map((message, index) => (
+          <div className="card my-3 py-3" key={index}>
+            {message}
+          </div>
+        ))}
       </div>
       <hr />
       <div>
